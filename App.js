@@ -16,25 +16,15 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import LocaionPermission from './src/screen/Auth/LocationPermission';
-import BoardingScreen from './src/screen/BoardingScreen';
 import Home from './src/screen/Home/Home';
-import ShopDetails from './src/screen/Home/ShopDetails';
-import ShowAllFoodShops from './src/screen/Home/ShowAllFoodShops';
-import ShowAllGrocery from './src/screen/Home/ShowAllGrocery';
-import Login from './src/screen/LogIn';
-import OTP from './src/screen/OTP';
-import ProductDesc from './src/screen/ProductDesc';
+import Package from './src/screen/Package/Package';
+import Payment from './src/screen/Payment/Payment';
 
 
 const App = () => {
 
   return (
-    // <BoardingScreen />
-    // <Login />
-    // <OTP />
-    // <ProductDesc />
-    <Home/>
+    <Payment />
   );
 };
 
