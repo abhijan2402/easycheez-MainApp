@@ -16,6 +16,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Cart from './src/screen/Home/Cart';
 import Home from './src/screen/Home/Home';
 import Package from './src/screen/Package/Package';
 import Payment from './src/screen/Payment/Payment';
@@ -24,7 +25,7 @@ import Payment from './src/screen/Payment/Payment';
 const App = () => {
 
   return (
-    <Payment />
+    <Cart />
   );
 };
 
