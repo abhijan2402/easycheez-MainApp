@@ -4,7 +4,8 @@ import {
     Image,
     StyleSheet,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    View
 } from 'react-native';
 const {width,height}=Dimensions.get('window');
 
@@ -12,11 +13,13 @@ const ShopTypeButton=({title,titleColor,buttonBackground,buttonImage})=>{
 
     return(
         <TouchableOpacity style={[styles.container,{backgroundColor:buttonBackground}]}>
-            <Image
-                style={{width:20,height:20,resizeMode:"contain"}}
-                source={buttonImage}
-            />
-            <Text style={{fontWeight:"bold",color:titleColor}}>{title}</Text>
+            <View style={{flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+                <Image
+                    style={{width:20,height:20,resizeMode:"contain",}}
+                    source={buttonImage}
+                />
+                <Text style={{fontWeight:"bold",color:titleColor,fontSize:18,marginLeft:5}}>{title}</Text>
+            </View>
         </TouchableOpacity>
     )
 }   
@@ -26,7 +29,7 @@ const styles=StyleSheet.create({
         padding:10,
         borderRadius:10,
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        // justifyContent: 'space-evenly',
         alignItems: 'center',
     }
 })

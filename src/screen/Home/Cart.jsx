@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import HomeAddresViewer from '../components/AddressHome';
 const windoWidth = Dimensions.get('window').width;
 const windoHeight = Dimensions.get('window').height;
 function Cart() {
@@ -18,9 +19,10 @@ function Cart() {
         height: windoHeight,
         backgroundColor: 'white',
       }}>
-      <View style={styles.Header}>
+      <HomeAddresViewer/>
+      {/* <View style={styles.Header}>
         <Text style={styles.HeaderText}>Cart</Text>
-      </View>
+      </View> */}
       <View style={{height: windoHeight / 1.2777}}>
         <View style={styles.ProView}>
           <Image
@@ -55,21 +57,23 @@ function Cart() {
               display: 'flex',
               flexDirection: 'row',
               marginHorizontal: 10,
+              borderWidth:1,
+              borderRadius:6,
+              borderColor:"#FFA500"
             }}>
             <View
               style={[
-                styles.SubView,
-                {borderTopLeftRadius: 6, borderBottomLeftRadius: 6},
+                styles.SubView
               ]}>
               <Text style={styles.SubViewText}>-</Text>
             </View>
-            <View style={styles.SubView}>
+            <View style={[styles.SubView,{borderLeftWidth:1, borderRightWidth:1,borderColor:"#FFA500",}]}>
               <Text style={styles.SubViewText}>1</Text>
             </View>
             <View
               style={[
                 styles.SubView,
-                {borderTopRightRadius: 6, borderBottomEndRadius: 6},
+                // {borderTopRightRadius: 6, borderBottomEndRadius: 6},
               ]}>
               <Text style={styles.SubViewText}>+</Text>
             </View>
@@ -108,21 +112,24 @@ function Cart() {
               display: 'flex',
               flexDirection: 'row',
               marginHorizontal: 10,
+              borderWidth:1,
+              borderRadius:6,
+              borderColor:"#FFA500"
             }}>
             <View
               style={[
                 styles.SubView,
-                {borderTopLeftRadius: 6, borderBottomLeftRadius: 6},
+                // {borderTopLeftRadius: 6, borderBottomLeftRadius: 6},
               ]}>
               <Text style={styles.SubViewText}>-</Text>
             </View>
-            <View style={styles.SubView}>
+            <View style={[styles.SubView,{borderLeftWidth:1, borderRightWidth:1,borderColor:"#FFA500",}]}>
               <Text style={styles.SubViewText}>1</Text>
             </View>
             <View
               style={[
                 styles.SubView,
-                {borderTopRightRadius: 6, borderBottomEndRadius: 6},
+                // {borderTopRightRadius: 6, borderBottomEndRadius: 6},
               ]}>
               <Text style={styles.SubViewText}>+</Text>
             </View>
@@ -141,7 +148,7 @@ function Cart() {
             {alignItems: 'center', justifyContent: 'flex-end'},
           ]}>
           <TouchableOpacity style={styles.ConBtnView}>
-            <Text style={styles.ConBtnViewText}>Continue</Text>
+            <Text style={styles.ConBtnViewText}>Place order</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -168,13 +175,15 @@ const styles = StyleSheet.create({
   ProView: {
     display: 'flex',
     flexDirection: 'row',
-    // borderWidth: 1,
+    borderWidth: 1,
+    borderColor:"#FFA500",
     alignItems: 'center',
     paddingVertical: 15,
     borderBottomWidth: 0.5,
+    marginTop:10
   },
   SubView: {
-    borderWidth: 1,
+    // borderWidth: 1,
     // borderRadius: 5,
     width: windoWidth / 14,
     justifyContent: 'center',
@@ -182,11 +191,12 @@ const styles = StyleSheet.create({
   },
   SubViewText: {
     fontSize: 18,
+    color:"black"
   },
   BtmPriceView: {
-    // borderWidth: 1,
     display: 'flex',
     flexDirection: 'row',
+    borderTopWidth:1
     // position: 'absolute',
     // bottom: 10,
   },

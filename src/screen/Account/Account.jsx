@@ -42,9 +42,7 @@ function Account() {
         </Text>
         <View style={[styles.OptiionView, {marginTop: 25}]}>
           <Image
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/128/5643/5643764.png',
-            }}
+            source={require("../../assets/profile/order.png")}
             style={styles.LogoImage}
           />
           <Text style={styles.OptionText}>Orders</Text>
@@ -57,9 +55,7 @@ function Account() {
         </View>
         <View style={styles.OptiionView}>
           <Image
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/128/684/684908.png',
-            }}
+            source={require("../../assets/profile/location.png")}
             style={styles.LogoImage}
           />
           <Text style={styles.OptionText}>Address</Text>
@@ -72,9 +68,7 @@ function Account() {
         </View>
         <View style={styles.OptiionView}>
           <Image
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/128/868/868681.png',
-            }}
+            source={require("../../assets/profile/help.png")}
             style={styles.LogoImage}
           />
           <Text style={styles.OptionText}>Help</Text>
@@ -87,9 +81,7 @@ function Account() {
         </View>
         <View style={styles.OptiionView}>
           <Image
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/128/8822/8822225.png',
-            }}
+            source={require("../../assets/profile/faq.png")}
             style={styles.LogoImage}
           />
           <Text style={styles.OptionText}>Subscription</Text>
@@ -121,8 +113,8 @@ const styles = StyleSheet.create({
     height: 70,
   },
   LogoImage: {
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
   },
   MainView: {
     display: 'flex',

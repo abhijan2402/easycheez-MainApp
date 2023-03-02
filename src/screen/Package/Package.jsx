@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -8,15 +8,36 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import ShopDetailsCard from '../components/ShopDetailCard';
 const windoWidth = Dimensions.get('window').width;
 const windoHeight = Dimensions.get('window').height;
 function Package() {
+  const [item,setItem]=useState([
+    {
+      id:1,
+      name:"Mammoth Combo(Veggie Pizza + Potato...",
+      quantity:"",
+      price:200,
+      image:{uri: 'https://www.online2all.com/wp-content/uploads/2021/03/maligai-22-e1614843055841.jpg',}
+    },
+    {
+      id:1,
+      name:"Mammoth Combo(Veggie Pizza + Potato...",
+      quantity:"",
+      price:200,
+      image:{uri: 'https://www.online2all.com/wp-content/uploads/2021/03/maligai-22-e1614843055841.jpg',}
+    },
+  ])
   return (
-    <ScrollView style={{backgroundColor: 'white'}}>
+    <ScrollView style={{backgroundColor: 'white',}}>
       <View style={styles.Header}>
         <Text style={styles.HeaderText}>Packages</Text>
       </View>
-      <View style={styles.MainView}>
+      <View style={{flex:1,flexDirection: 'row',}}>
+        <ShopDetailsCard item={item[0]} discount={true} discountValue={20} buttonText={"Add to cart"} />
+        <ShopDetailsCard item={item[1]} discount={true} discountValue={20} buttonText={"Add to cart"} />
+      </View>
+      {/* <View style={styles.MainView}>
         <View style={styles.PackProView}>
           <Image
             source={{
@@ -45,7 +66,7 @@ function Package() {
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </View> */}
     </ScrollView>
   );
 }

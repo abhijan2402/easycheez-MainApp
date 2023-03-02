@@ -10,10 +10,16 @@ import {
 import { shopItem } from '../../data/ShopItemDeails';
 const {width,height}=Dimensions.get('window');
 
-const ShopDetailsCard=({item})=>{
+const ShopDetailsCard=({item,discount,discountValue,buttonText})=>{
 
     return(
         <View style={styles.container}>
+            {
+                discount &&
+                <View style={styles.discount_card}>
+                    <Text style={{fontWeight:"bold",color:"white"}}>{discountValue}% off</Text>
+                </View>
+            }
             <Image
                 source={item.image}
                 style={{width:'100%',height:100,resizeMode:"stretch",borderRadius:10}}
@@ -33,7 +39,7 @@ const ShopDetailsCard=({item})=>{
                 <View style={{height:40,borderWidth:1,borderColor:"#E8D6BD",}}/>
                 <TouchableOpacity style={{height:40,width:"45%",alignItems:"center",justifyContent: 'center',}}>
                     <Text style={{color:"#2C75B8",fontWeight:"bold",fontSize:10,}}>
-                        Add Item
+                       {buttonText}
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -49,17 +55,30 @@ const styles=StyleSheet.create({
         alignItems: 'center',
         elevation:5,
         justifyContent:"space-evenly",
+        borderWidth:1,
+        borderColor:"#E8D6BD"
     },
     itemdetailStyle:{
         flexDirection:"row",
         width:"100%",
         height:40,
-        borderWidth:1.5,
+        borderTopWidth:1.5,
         borderColor:"#E8D6BD",
-        borderRadius:10,
         alignItems:"center",
         justifyContent:"space-between"
-    }
+    },
+    discount_card:{
+        backgroundColor:"#61C039",
+        position:"absolute",
+        zIndex:5000,
+        borderTopLeftRadius:8,
+        height:30,
+        width:70,
+        alignItems:"center",
+        justifyContent: 'center',
+        left:0,
+        top:0
+      }
 })
 
 export default ShopDetailsCard;

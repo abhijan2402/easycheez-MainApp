@@ -28,7 +28,7 @@ const ShopDetails=()=>{
             <View style={{flexDirection: 'row',flexWrap: 'wrap',}}>
                 {
                     shopItem.map((item,index)=>(
-                        <ShopDetailsCard key={index} item={item} />
+                        <ShopDetailsCard key={index} item={item} discount={false} discountValue={20} buttonText={"Add Item"} />
                     ))
                 }
             </View>
@@ -39,17 +39,6 @@ const styles=StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:"white",
-    },
-    customInput: {
-        width: width - 30,
-        backgroundColor: "white",
-        borderRadius: 10,
-        paddingHorizontal: 10,
-        borderWidth: 1.5,
-        borderColor: "#808080",
-        fontWeight: "bold",
-        color: "black",
-        alignSelf:"center"
     },
 })
 

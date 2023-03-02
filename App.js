@@ -19,14 +19,27 @@ import {
 import Account from './src/screen/Account/Account';
 import Cart from './src/screen/Home/Cart';
 import Home from './src/screen/Home/Home';
+import ShowAllFoodShops from './src/screen/Home/ShowAllFoodShops';
+import ShowAllGrocery from './src/screen/Home/ShowAllGrocery';
 import Package from './src/screen/Package/Package';
 import Payment from './src/screen/Payment/Payment';
+import ShopDetails from './src/screen/Home/ShopDetails';
+import ProductDesc from './src/screen/Home/ProductDesc';
 
 
 const App = () => {
 
   return (
-    <Account />
+   <>
+      {/* <ProductDesc /> */}
+      {/* <ShowAllFoodShops /> */}
+      {/* <ShowAllGrocery /> */}
+      <Package />
+      {/* <Payment /> */}
+      {/* <Account /> */}
+      {/* <Cart /> */}
+      {/* <ShopDetails /> */}
+   </>
   );
 };
 
