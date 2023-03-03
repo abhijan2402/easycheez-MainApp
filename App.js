@@ -25,21 +25,25 @@ import Package from './src/screen/Package/Package';
 import Payment from './src/screen/Payment/Payment';
 import ShopDetails from './src/screen/Home/ShopDetails';
 import ProductDesc from './src/screen/Home/ProductDesc';
+import Login from './src/screen/Auth/LogIn';
+import BoardingScreen from './src/screen/Auth/BoardingScreen';
 
 
 const App = () => {
 
   return (
-   <>
+    <>
       {/* <ProductDesc /> */}
       {/* <ShowAllFoodShops /> */}
       {/* <ShowAllGrocery /> */}
-      <Package />
+      {/* <Login /> */}
       {/* <Payment /> */}
       {/* <Account /> */}
       {/* <Cart /> */}
       {/* <ShopDetails /> */}
-   </>
+      <BoardingScreen />
+
+    </>
   );
 };
 

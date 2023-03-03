@@ -6,12 +6,17 @@ function BoardingScreen() {
     return (
         <ScrollView style={styles.MainView}>
             <View >
-                <Image source={{ uri: "hpt0uDrWGhMHN6Zhe7MA0GnjOFIyUFrfxBzpYvuKugfCBHABzrCMDo1HL8M2s9p0vYjLD6HvA9HOhC8ZQUlk6fndqCbMgItO0JwRXszx6OyjDmxXlm7DKFy5VDY16OWwlyYxMbg5s1ej0JPPtcBPh8Z9nh5nNqUkCzMkBFjI5ra9Zyc1~jOB89OGETuOE4kryT4pCrVT-WEtg~mcs0MoYGkDk2yGz84tlQVev9x2ND7flGP9Garl-43fEDV9jmpA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" }} style={styles.Image} />
+                <Image source={require('../../assets/Boarding.png')}
+                    resizeMode="cover"
+                    style={styles.Image} />
             </View>
             <View style={styles.BgView}>
                 <View>
-                    <Text style={styles.Easy}>EAZY</Text>
-                    <Text style={styles.Cheez}>CHEEZ</Text>
+                    {/* <Text style={styles.Easy}>EAZY</Text>
+                    <Text style={styles.Cheez}>CHEEZ</Text> */}
+                    <Image source={require('../../assets/EasyCheez.png')}
+                        resizeMode="cover"
+                        style={styles.Image1} />
                     {/* <Image source={{uri:""}}/> */}
                 </View>
                 <Text style={styles.BelowText}>order from nearby store</Text>
@@ -28,7 +33,12 @@ const styles = StyleSheet.create({
     Image: {
         width: windoWidth,
         height: windoHeight / 2.5,
-        marginTop: 100
+        marginTop: 100,
+    },
+    Image1: {
+        width: windoWidth / 1.7,
+        height: windoHeight / 7,
+        // marginTop: 100,
     },
     BelowText: {
         fontSize: 19,
