@@ -25,20 +25,28 @@ import Package from './src/screen/Package/Package';
 import Payment from './src/screen/Payment/Payment';
 import ShopDetails from './src/screen/Home/ShopDetails';
 import ProductDesc from './src/screen/Home/ProductDesc';
-
-
+import MainNavigation from './src/Navigation/MainNavigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const App = () => {
-
+  const Stack = createNativeStackNavigator();
   return (
    <>
       {/* <ProductDesc /> */}
       {/* <ShowAllFoodShops /> */}
       {/* <ShowAllGrocery /> */}
-      <Package />
+      {/* <Package /> */}
       {/* <Payment /> */}
       {/* <Account /> */}
       {/* <Cart /> */}
       {/* <ShopDetails /> */}
+      {/* <MainNavigation/> */}
+      <NavigationContainer>
+         <Stack.Navigator initialRouteName='MainNavigation' screenOptions={{headerShown:false}}>
+                <Stack.Screen name='MainNavigation' component={MainNavigation}/>
+              
+         </Stack.Navigator>
+      </NavigationContainer>
    </>
   );
 };
