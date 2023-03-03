@@ -31,7 +31,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const App = () => {
   const Stack = createNativeStackNavigator();
   return (
-   <>
+    <>
       {/* <ProductDesc /> */}
       {/* <ShowAllFoodShops /> */}
       {/* <ShowAllGrocery /> */}
@@ -42,12 +42,12 @@ const App = () => {
       {/* <ShopDetails /> */}
       {/* <MainNavigation/> */}
       <NavigationContainer>
-         <Stack.Navigator initialRouteName='MainNavigation' screenOptions={{headerShown:false}}>
-                <Stack.Screen name='MainNavigation' component={MainNavigation}/>
-              
-         </Stack.Navigator>
+        <Stack.Navigator initialRouteName='MainNavigation' screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='MainNavigation' component={MainNavigation} />
+
+        </Stack.Navigator>
       </NavigationContainer>
-   </>
+    </>
   );
 };
 

@@ -9,15 +9,15 @@ function Login() {
                 <Image source={{ uri: "https://media.istockphoto.com/id/1225779547/vector/people-keeping-healthy-diet.jpg?s=612x612&w=0&k=20&c=HDnAlcR98KRV1T4Z4D5-gNvbwRAaT9zzR--JSYgzzfI=" }} style={styles.Image} />
             </View>
             <View style={styles.TextView}>
-                <Text style={styles.NumberView}>Enter your WhatsApp Number</Text>
-                <Text style={styles.OTPView}>You will receive an OTP verification to validate your number</Text>
+                <Text style={styles.NumberView}>Enter your Email & Password</Text>
+                {/* <Text style={styles.OTPView}>You will receive an OTP verification to validate your number</Text> */}
             </View>
             <View style={styles.TextFieldView}>
-                <TextInput style={styles.TextFieldText} placeholder='Enter your First Name' />
-                <TextInput style={styles.TextFieldText} placeholder='+91' />
+                <TextInput style={styles.TextFieldText} placeholder='Email' />
+                <TextInput style={styles.TextFieldText} placeholder='Password' />
             </View>
             <TouchableOpacity style={styles.SendOTPView}>
-                <Text style={styles.SendOTPText}>Send OTP</Text>
+                <Text style={styles.SendOTPText}>SignUp</Text>
             </TouchableOpacity>
         </ScrollView>
     )
