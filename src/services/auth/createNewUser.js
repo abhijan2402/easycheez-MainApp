@@ -14,7 +14,7 @@ export const createNewUser=async(email,password,confirmPass)=>{
     .then(async (res) => {
         return firestore()
         .collection('Users')
-        .doc(res.uid)
+        .doc(res.user.uid)
         .set({
             email:email
         })
