@@ -19,7 +19,7 @@ const MainNavigation = () => {
       <Tab.Navigator
       screenOptions={{
         headerShown:false,tabBarShowLabel: false,showIcon: false,
-            tabBarStyle:[ {position:"absolute",elevation:0,backgroundColor:"#ffffff",borderTopWidth:1,borderTopColor:"#808080",height:54,},],
+            tabBarStyle:[ {backgroundColor:"#ffffff",borderTopWidth:1,borderTopColor:"#808080",height:54,},],
           }}
       >
        <Tab.Screen name="Profile" component={Home} options={{

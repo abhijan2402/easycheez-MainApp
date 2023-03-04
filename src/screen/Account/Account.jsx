@@ -6,9 +6,12 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 const windoWidth = Dimensions.get('window').width;
 const windoHeight = Dimensions.get('window').height;
+import auth from '@react-native-firebase/auth';
+
 function Account() {
   return (
     <View
@@ -92,6 +95,14 @@ function Account() {
             style={styles.LogoImage}
           />
         </View>
+        <Button 
+          title='Logout' 
+          onPress={()=>
+            auth()
+            .signOut()
+            .then(() => console.log('User signed out!'))
+          }
+        />
       </View>
     </View>
   );

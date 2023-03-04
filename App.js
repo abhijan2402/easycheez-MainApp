@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -32,29 +32,38 @@ import MainNavigation from './src/Navigation/MainNavigation';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import auth from '@react-native-firebase/auth';
+const Stack = createNativeStackNavigator();
+
 const App = () => {
-  const Stack = createNativeStackNavigator();
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState(null);
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  }, []);
+
+
   return (
     <>
-      {/* <ProductDesc /> */}
-      {/* <ShowAllFoodShops /> */}
-      {/* <ShowAllGrocery /> */}
-      {/* <Package /> */}
-      {/* <Payment /> */}
-      {/* <Account /> */}
-      {/* <Cart /> */}
-      {/* <ShopDetails /> */}
-      {/* <MainNavigation/> */}
       <NavigationContainer>
         <Stack.Navigator initialRouteName='SignIn' screenOptions={{ headerShown: false }}>
-          <Stack.Screen name='SignIn' component={SignIn} />
-          <Stack.Screen name='SignUp' component={SignUp} />
-          <Stack.Screen name='ForgotPass' component={ForgotPass} />
-          <Stack.Screen name='MainNavigation' component={MainNavigation} />
-
+          {
+            user===null?
+            <>
+              <Stack.Screen name='SignIn' component={SignIn} />
+              <Stack.Screen name='SignUp' component={SignUp} />
+              <Stack.Screen name='ForgotPass' component={ForgotPass} />
+            </>:
+            <Stack.Screen name='MainNavigation' component={MainNavigation} />
+          }
         </Stack.Navigator>
       </NavigationContainer>
-      {/* <ForgotPass/> */}
     </>
   );
 };
