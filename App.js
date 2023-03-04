@@ -25,7 +25,11 @@ import Package from './src/screen/Package/Package';
 import Payment from './src/screen/Payment/Payment';
 import ShopDetails from './src/screen/Home/ShopDetails';
 import ProductDesc from './src/screen/Home/ProductDesc';
+import SignIn from './src/screen/Auth/SignIn'
+import SignUp from './src/screen/Auth/SignUp';
+import ForgotPass from './src/screen/Auth/ForgotPass';
 import MainNavigation from './src/Navigation/MainNavigation';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const App = () => {
@@ -42,11 +46,15 @@ const App = () => {
       {/* <ShopDetails /> */}
       {/* <MainNavigation/> */}
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='MainNavigation' screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName='SignIn' screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='SignIn' component={SignIn} />
+          <Stack.Screen name='SignUp' component={SignUp} />
+          <Stack.Screen name='ForgotPass' component={ForgotPass} />
           <Stack.Screen name='MainNavigation' component={MainNavigation} />
 
         </Stack.Navigator>
       </NavigationContainer>
+      {/* <ForgotPass/> */}
     </>
   );
 };

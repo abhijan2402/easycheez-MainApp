@@ -249,6 +249,7 @@ android {
 }
 
 dependencies {
+    apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //noinspection GradleDynamicVersion
