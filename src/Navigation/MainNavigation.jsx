@@ -4,9 +4,11 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Home from '../screen/Home/Home'
+import HomeNavigation from '../Navigation/HomeNavigation';
+import Package from '../screen/Package/Package';
+import CartNavigation from './CartNavigation';
 import Account from '../screen/Account/Account'
-import ProductDesc from '../screen/Home/ProductDesc'
+import Cart from '../screen/Home/Cart'
 import ShopDetails from '../screen/Home/ShopDetails'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -22,7 +24,7 @@ const MainNavigation = () => {
             tabBarStyle:[ {backgroundColor:"#ffffff",borderTopWidth:1,borderTopColor:"#808080",height:54,},],
           }}
       >
-       <Tab.Screen name="Profile" component={Home} options={{
+       <Tab.Screen name="HomeNavigation" component={HomeNavigation} options={{
         tabBarIcon:({focused})=>(
           <View style={{alignItems:'center',justifyContent:'center'}}>
             <Ionicons name='home'  color={focused ? '#FFA500' : 'black'} size={22}/>
@@ -31,7 +33,7 @@ const MainNavigation = () => {
         )
       }}/>
 
-<Tab.Screen name='ProductDesc' component={ProductDesc} options={{
+<Tab.Screen name='Package' component={Package} options={{
         tabBarIcon:({focused})=>(
           <View style={{alignItems:'center',justifyContent:'center'}}>
           
@@ -42,11 +44,11 @@ const MainNavigation = () => {
       }}
         />
 
-      <Tab.Screen name="ShopDetails" component={ShopDetails} options={{
+      <Tab.Screen name="CartNavigation" component={CartNavigation} options={{
         tabBarIcon:({focused})=>(
           <View style={{alignItems:'center',justifyContent:'center'}}>
             <Ionicons name='cart-outline' color={focused ? '#FFA500' : 'black'} size={22}/>
-            
+   
           </View>
         )
       }}

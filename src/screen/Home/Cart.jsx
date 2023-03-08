@@ -11,7 +11,7 @@ import {
 import HomeAddresViewer from '../components/AddressHome';
 const windoWidth = Dimensions.get('window').width;
 const windoHeight = Dimensions.get('window').height;
-function Cart() {
+function Cart({navigation}) {
   return (
     <ScrollView
       style={{
@@ -148,10 +148,11 @@ function Cart() {
             {alignItems: 'center', justifyContent: 'flex-end'},
           ]}>
           <TouchableOpacity style={styles.ConBtnView}>
-            <Text style={styles.ConBtnViewText}>Place order</Text>
+            <Text style={styles.ConBtnViewText} onPress={()=>{navigation.navigate('Payment')}}>Place order</Text>
           </TouchableOpacity>
         </View>
       </View>
+      <View style={{marginBottom:20}}></View>
     </ScrollView>
   );
 }

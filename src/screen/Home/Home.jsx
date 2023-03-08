@@ -19,7 +19,7 @@ import ItemCard from '../components/ItemCard';
 import { HomeFoodData } from '../../data/homeFoodData';
 import IconInputBox from '../components/IconInputBox';
 
-const Home=()=>{
+const Home=({navigation})=>{
 
     return(
         <ScrollView style={styles.container}>
@@ -39,7 +39,7 @@ const Home=()=>{
                     ))
                 }
             </View>
-            <Text style={{color:"#61C039",fontWeight:"600",textAlign:"center",margin:10}}>
+            <Text style={{color:"#61C039",fontWeight:"600",textAlign:"center",margin:10}} onPress={()=>navigation.navigate('ShowAllGrocery')}>
                 Show More
             </Text>
             <View style={{flexDirection: 'row',flexWrap: 'wrap',}}>
@@ -51,7 +51,7 @@ const Home=()=>{
                     ))
                 }
             </View>
-            <Text style={{color:"#FFA500",fontWeight:"600",textAlign:"center",margin:10}}>
+            <Text style={{color:"#FFA500",fontWeight:"600",textAlign:"center",margin:10}} onPress={()=>navigation.navigate('ShowAllFoodShops')}>
                 Show More
             </Text>
         </ScrollView>

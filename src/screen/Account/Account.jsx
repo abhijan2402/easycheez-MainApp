@@ -95,14 +95,14 @@ function Account() {
             style={styles.LogoImage}
           />
         </View>
-        <Button 
+        {/* <Button 
           title='Logout' 
           onPress={()=>
             auth()
             .signOut()
             .then(() => console.log('User signed out!'))
           }
-        />
+        /> */}
       </View>
     </View>
   );
